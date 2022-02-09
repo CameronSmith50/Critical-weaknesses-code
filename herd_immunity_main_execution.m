@@ -72,7 +72,7 @@ alpha_L = 0.001;  % Default: 0.001
 alpha_H = 0.05;  % Default: 0.
 
 % Rate of waning immunity (set to 8 months)
-nu = 1/240;  % Default: 0
+nu = 0;  % Default: 0
 
 % Rate of external infection. Note this only affects the two community
 % subpopulations
@@ -90,8 +90,8 @@ split_inf = 0;  % Set to 1 if you wish for the infected class to be split.
 symp_trans_increase = 1.1;
 asymp_trans_decrease = 0.8;
 if split_inf == 1
-    alpha_L = 1/(1-perc_asymp)*alpha_L;
-    alpha_H = 1/(1-perc_asymp)*alpha_H;
+    alpha_L = 1/(1-prop_asymp)*alpha_L;
+    alpha_H = 1/(1-prop_asymp)*alpha_H;
 end
 
 % Define epsilon the threshold below which sheilding is relaxed. This value
@@ -452,7 +452,7 @@ for m=1:M
             j = j-T;
             % Move an E of type j to an I of type j
             E(j) = E(j)-1;
-            if split_inf == 1 && rand < perc_asymp
+            if split_inf == 1 && rand < prop_asymp
                 IA(j) = IA(j)+1;
             elseif split_inf == 1
                 IS(j) = IS(j)+1;
@@ -606,11 +606,7 @@ TIME = toc;
 fprintf('     Time taken = %.4f\n\n',TIME)
 
 % Append to the save_name
-if maintext == 1
-    save_name=[save_name,'_main.mat'];
-else
-    save_name=[save_name,'_supp.mat'];
-end
+save_name = [save_name, '.mat'];
 
 % Save the data to the relvant save_name
 save(save_name);
