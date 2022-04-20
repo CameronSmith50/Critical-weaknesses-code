@@ -155,7 +155,7 @@ for mm = 1:3
     set(gca,'xTickLabels',{})
     
     % Add the correct plotting label
-    text(2,87,sprintf('%s', alphabet(kk)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk)),'FontSize',fsize,'Units','points')
     
     % Tile for the ICU surge plot
     nexttile(kk+3)
@@ -230,7 +230,7 @@ for mm = 1:3
     set(gca,'xTickLabels',{})
     
     % Add the correct label
-    text(2,87,sprintf('%s', alphabet(kk+3)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk+3)),'FontSize',fsize,'Units','points')
     
     % Tile for the group normalised deaths plot
     nexttile(kk+6)
@@ -277,9 +277,10 @@ for mm = 1:3
     xlim([0,175])
     xticks([0,50,100,150])
     ylim([0, y_upper_prop])
+    xticklabels({})
     
     % Add the correct label
-    text(2,87,sprintf('%s', alphabet(kk+6)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk+6)),'FontSize',fsize,'Units','points')
     
     % Tile for the group normalised deaths plot
     ax = nexttile(kk+9);
@@ -327,13 +328,16 @@ for mm = 1:3
     end
     
     % Add the correct label
-    text(2,87,sprintf('%s', alphabet(kk+9)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk+9)),'FontSize',fsize,'Units','points')
     
 end
 
 % Create a legend
 lg  = legend([pL, pHC, pHF, pO], {'Lower-risk', 'Higher-risk community', 'Higher-risk LTC', 'Overall'}, 'Orientation', 'Horizontal', 'NumColumns', 4);
 lg.Layout.Tile = 'South';
+
+% Export to eps
+print('Fig2','-depsc', '-painters')
 
 %% Figure 3 - Varying levels of perfection
 
@@ -390,6 +394,9 @@ annotation('textbox', [0.20,0.13,0.17,0.09], 'String', 'Fig. 1', 'FitBoxToText',
 annotation('textbox', [0.27,0.26,0.17,0.09], 'String', 'Fig. S2', 'FitBoxToText', 'on', 'LineStyle', 'none')
 annotation('textbox', [0.34,0.40,0.17,0.09], 'String', 'Fig. 1', 'FitBoxToText', 'on', 'LineStyle', 'none')
 annotation('textbox', [0.41,0.50,0.17,0.09], 'String', 'Fig. S2', 'FitBoxToText', 'on', 'LineStyle', 'none')
+
+% Export to eps
+print('Fig3','-depsc', '-painters')
 
 %% Figure 4 - [NS, PS and IS] + RC
  
@@ -482,7 +489,7 @@ for mm = 4:6
     set(gca,'xTick',[0,300,600])
     
     % Add the correct plotting label
-    text(2,87,sprintf('%s', alphabet(kk)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk)),'FontSize',fsize,'Units','points')
     
     % Tile for the ICU surge plot
     nexttile(kk+3)
@@ -556,7 +563,7 @@ for mm = 4:6
     set(gca,'xTickLabels',{})
     
     % Add the correct label
-    text(2,87,sprintf('%s', alphabet(kk+3)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk+3)),'FontSize',fsize,'Units','points')
     
     % Tile for the group normalised deaths plot
     nexttile(kk+6)
@@ -605,7 +612,7 @@ for mm = 4:6
     set(gca,'xTickLabels',{})
     
     % Add the correct label
-    text(2,87,sprintf('%s', alphabet(kk+6)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk+6)),'FontSize',fsize,'Units','points')
     
     % Tile for the group normalised deaths plot
     nexttile(kk+9)
@@ -651,13 +658,16 @@ for mm = 4:6
     end
     
     % Add the correct label
-    text(2,87,sprintf('%s', alphabet(kk+9)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk+9)),'FontSize',fsize,'Units','points')
     
 end
 
 % Create a legend
 lg  = legend([pL, pHC, pHF, pO], {'Lower-risk', 'Higher-risk community', 'Higher-risk LTC', 'Overall'}, 'Orientation', 'Horizontal', 'NumColumns', 4);
 lg.Layout.Tile = 'South';
+
+% Export to eps
+print('Fig4','-depsc', '-painters')
 
 %% Figure 5 - [NS, PS and IS] + EI
  
@@ -751,7 +761,7 @@ for mm = 7:9
     set(gca,'xTickLabels',{})
     
     % Add the correct plotting label
-    text(2,87,sprintf('%s', alphabet(kk)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk)),'FontSize',fsize,'Units','points')
     
     % Tile for the ICU surge plot
     nexttile(kk+3)
@@ -826,7 +836,7 @@ for mm = 7:9
     set(gca,'xTickLabels',{})
     
     % Add the correct label
-    text(2,87,sprintf('%s', alphabet(kk+3)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk+3)),'FontSize',fsize,'Units','points')
     
     % Tile for the group normalised deaths plot
     nexttile(kk+6)
@@ -876,7 +886,7 @@ for mm = 7:9
     set(gca,'xTickLabels',{})
     
     % Add the correct label
-    text(2,87,sprintf('%s', alphabet(kk+6)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk+6)),'FontSize',fsize,'Units','points')
     
     % Tile for the group normalised deaths plot
     nexttile(kk+9)
@@ -923,13 +933,16 @@ for mm = 7:9
     end
     
     % Add the correct label
-    text(2,87,sprintf('%s', alphabet(kk+9)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk+9)),'FontSize',fsize,'Units','points')
     
 end
 
 % Create a legend
 lg  = legend([pL, pHC, pHF, pO], {'Lower-risk', 'Higher-risk community', 'Higher-risk LTC', 'Overall'}, 'Orientation', 'Horizontal', 'NumColumns', 4);
 lg.Layout.Tile = 'South';
+
+% Export to eps
+print('Fig5','-depsc', '-painters')
 
 %% Figure 6 - [NS, PS and IS] + WI
  
@@ -1022,7 +1035,7 @@ for mm = 10:12
     set(gca,'xTick',[0,300,600])
     
     % Add the correct plotting label
-    text(2,87,sprintf('%s', alphabet(kk)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk)),'FontSize',fsize,'Units','points')
     
     % Tile for the ICU surge plot
     nexttile(kk+3)
@@ -1096,7 +1109,7 @@ for mm = 10:12
     set(gca,'xTickLabels',{})
     
     % Add the correct label
-    text(2,87,sprintf('%s', alphabet(kk+3)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk+3)),'FontSize',fsize,'Units','points')
     
     % Tile for the group normalised deaths plot
     nexttile(kk+6)
@@ -1145,7 +1158,7 @@ for mm = 10:12
     set(gca,'xTickLabels',{})
     
     % Add the correct label
-    text(2,87,sprintf('%s', alphabet(kk+6)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk+6)),'FontSize',fsize,'Units','points')
     
     % Tile for the group normalised deaths plot
     nexttile(kk+9)
@@ -1191,10 +1204,13 @@ for mm = 10:12
     end
     
     % Add the correct label
-    text(2,87,sprintf('%s', alphabet(kk+9)),'FontSize',fsize,'Units','points')
+    text(2,83,sprintf('%s', alphabet(kk+9)),'FontSize',fsize,'Units','points')
     
 end
 
 % Create a legend
 lg  = legend([pL, pHC, pHF, pO], {'Lower-risk', 'Higher-risk community', 'Higher-risk LTC', 'Overall'}, 'Orientation', 'Horizontal', 'NumColumns', 4);
 lg.Layout.Tile = 'South';
+
+% Export to eps
+print('Fig6','-depsc', '-painters')
